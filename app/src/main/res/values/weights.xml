@@ -1,0 +1,8 @@
+<resources>
+    <string name="detractor_weight">50</string>
+    <string name="passive_weight">25</string>
+    <string name="promoters_weight">25</string>
+    <string name="detractor_label">Detractors: 50%</string>
+    <string name="passive_label">Passive: 25%</string>
+    <string name="promoter_label">Promoter: 25%</string>
+</resources>
