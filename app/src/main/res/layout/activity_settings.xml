@@ -4,14 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.linden.carbonloyalty.Settings"
-    android:background="@color/appBackground">
+    tools:context="com.example.linden.carbonloyalty.Settings">
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blank Settings Page"
-        tools:layout_editor_absoluteX="517dp"
-        tools:layout_editor_absoluteY="132dp" />
+        android:id="@+id/settingsLabel"
+        android:layout_width="327dp"
+        android:layout_height="78dp"
+        android:text="@string/settings_page_label"
+        android:textSize="50sp"
+        tools:layout_editor_absoluteX="193dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        tools:layout_editor_absoluteX="520dp"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <TextView
+        android:id="@+id/fontSizeTextView"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:text="@string/font_size_settings_label"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="320dp"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <TextView
+        android:id="@+id/notificationsTextView"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:text="@string/notifications_settings_label"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="320dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <Switch
+        android:id="@+id/notificationSwitch"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        tools:layout_editor_absoluteX="520dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:background="@color/appBackground"
+        android:text="@string/save_settings"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="550dp"
+        tools:layout_editor_absoluteY="575dp" />
+
 </android.support.constraint.ConstraintLayout>

@@ -4,123 +4,229 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.linden.carbonloyalty.NetPromoter"
-    android:background="@color/appBackground">
+    tools:context="com.example.linden.carbonloyalty.NetPromoter">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="100"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="68dp">
+    <TextView
+        android:id="@+id/statusView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/detractorTextView"
+        android:layout_marginBottom="39dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginTop="74dp"
+        android:background="@color/statusColor"
+        android:text="@string/status_label"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/promoterWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/promoterTextView"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:layout_width="0px"
-            android:layout_height="100px"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_weight="@string/detractor_weight"
-            android:background="#FFA500" />
+    <TextView
+        android:id="@+id/detractorTextView"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/textview_border"
+        android:text="@string/detractor_label"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/detractorWeight"
+        app:layout_constraintEnd_toEndOf="@+id/detractorWeight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/detractorWeight"
+        app:layout_constraintTop_toBottomOf="@+id/nonresponseWeight" />
 
-        <View
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="@string/passive_weight"
-            android:background="#EEE8AA" />
+    <TextView
+        android:id="@+id/promoterTextView"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/passiveTextView"
+        android:layout_marginEnd="134dp"
+        android:layout_toEndOf="@+id/detractorTextView"
+        android:background="@drawable/textview_border"
+        android:text="@string/promoter_label"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/passiveTextView"
+        app:layout_constraintEnd_toStartOf="@+id/statusView"
+        app:layout_constraintStart_toEndOf="@+id/responseWeight" />
 
-        <View
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="@string/promoters_weight"
-            android:background="#008000" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/currentLabelTextView"
+        android:layout_width="350dp"
+        android:layout_height="43dp"
+        android:layout_alignTop="@+id/statusView"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="66dp"
+        android:layout_toEndOf="@+id/statusView"
+        android:text="@string/net_promoter_label"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/messageEditView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detractorWeight" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="0dp">
+    <TextView
+        android:id="@+id/passiveTextView"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/detractorTextView"
+        android:layout_alignBottom="@+id/detractorTextView"
+        android:layout_marginEnd="220dp"
+        android:layout_marginStart="220dp"
+        android:layout_toEndOf="@+id/detractorTextView"
+        android:background="@drawable/textview_border"
+        android:text="@string/passive_label"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/passiveWeight"
+        app:layout_constraintEnd_toEndOf="@+id/promoterTextView"
+        app:layout_constraintStart_toStartOf="@+id/detractorTextView"
+        app:layout_constraintTop_toBottomOf="@+id/responseWeight" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_alignBaseline="@+id/textView2"
-            android:layout_alignBottom="@+id/textView2"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="85dp"
-            android:text="@string/detractor_label"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="288dp" />
+    <EditText
+        android:id="@+id/messageEditView"
+        android:layout_width="950dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/statusView"
+        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginStart="161dp"
+        android:layout_toEndOf="@+id/statusView"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/net_promoter_message"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/promoterWeight" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_alignBaseline="@+id/textView3"
-            android:layout_alignBottom="@+id/textView3"
-            android:layout_marginEnd="150dp"
-            android:layout_toStartOf="@+id/textView3"
-            android:text="@string/passive_label"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="645dp"
-            tools:layout_editor_absoluteY="288dp" />
+    <TextView
+        android:id="@+id/noresponseTextView"
+        android:layout_width="220dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/textview_border"
+        android:text="@string/nonresponse_label"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/nonresponseWeight"
+        app:layout_constraintEnd_toStartOf="@+id/respondedTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_above="@+id/textView4"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="42dp"
-            android:layout_marginEnd="154dp"
-            android:text="@string/promoter_label"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="933dp"
-            tools:layout_editor_absoluteY="288dp" />
+    <TextView
+        android:id="@+id/detractorWeight"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="47dp"
+        android:layout_marginStart="161dp"
+        android:background="@drawable/textview_border"
+        android:text="@string/detractor_weight"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/currentLabelTextView"
+        app:layout_constraintEnd_toStartOf="@+id/passiveWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detractorTextView" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/textView"
-            android:layout_marginBottom="148dp"
-            android:text="This will reflect your current status. This will even be able to change colors to reflect that at some point. Wow!"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="58dp"
-            tools:layout_editor_absoluteY="392dp" />
+    <TextView
+        android:id="@+id/passiveWeight"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="314dp"
+        android:background="@drawable/textview_border"
+        android:text="@string/passive_weight"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/promoterWeight"
+        app:layout_constraintStart_toEndOf="@+id/detractorWeight"
+        app:layout_constraintTop_toBottomOf="@+id/passiveTextView" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:layout_alignTop="@+id/textView4"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="39dp"
-            android:layout_toEndOf="@+id/textView4"
-            android:text="Current Net Promoter Message:"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="264dp"
-            tools:layout_editor_absoluteY="392dp" />
+    <TextView
+        android:id="@+id/promoterWeight"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="114dp"
+        android:layout_marginEnd="459dp"
+        android:background="@drawable/textview_border"
+        android:text="@string/promoters_weight"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/messageEditView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/passiveWeight"
+        app:layout_constraintTop_toBottomOf="@+id/statusView" />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="700dp"
-            android:layout_height="70dp"
-            android:layout_alignTop="@+id/textView4"
-            android:layout_marginStart="102dp"
-            android:layout_marginTop="118dp"
-            android:layout_toEndOf="@+id/textView4"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="On a scale of 1-10 how likely is it that you would recommend us?"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="264dp"
-            tools:layout_editor_absoluteY="444dp" />
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/nonresponseWeight"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginStart="161dp"
+        android:background="@drawable/textview_border"
+        android:text="@string/nonresponse_weight"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/detractorTextView"
+        app:layout_constraintEnd_toStartOf="@+id/responseWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noresponseTextView" />
+
+    <TextView
+        android:id="@+id/respondedTextView"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="354dp"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/textview_border"
+        android:text="@string/response_label"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/responseWeight"
+        app:layout_constraintEnd_toStartOf="@+id/statusView"
+        app:layout_constraintStart_toEndOf="@+id/noresponseTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/responseWeight"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/textview_border"
+        android:text="@string/response_weight"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/passiveTextView"
+        app:layout_constraintEnd_toStartOf="@+id/promoterTextView"
+        app:layout_constraintStart_toEndOf="@+id/nonresponseWeight"
+        app:layout_constraintTop_toBottomOf="@+id/respondedTextView" />
+
+    <Button
+        android:id="@+id/submitChangeButton"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:background="#3ecae1"
+        android:text="@string/submit_change"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="962dp"
+        tools:layout_editor_absoluteY="627dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/messageEditView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/messageEditView"
+        app:layout_constraintTop_toBottomOf="@+id/messageEditView"/>
 
 
 </android.support.constraint.ConstraintLayout>

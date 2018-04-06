@@ -3,4 +3,12 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="settings_title">Settings</string>
+    <string name="net_promoter_label">Current Promoter Message</string>
+    <string name="net_promoter_message">On a scale of 1-10 how likely is it that you would recommend us?</string>
+    <string name="submit_change">Submit Change</string>
+    <string name="status_label">\n\nCurrent\nStatus</string>
+    <string name="font_size_settings_label">Font Size</string>
+    <string name="notifications_settings_label">Notifications</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="settings_page_label">My Settings</string>
 </resources>
